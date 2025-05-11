@@ -1,81 +1,54 @@
-📁 Project Name: MUZZAMIL – Personal Portfolio Website
+# React + TypeScript + Vite
 
-📌 Description
-A modern, responsive, and professionally designed portfolio website for a Frontend Web Developer. This project showcases personal branding, technical skills, featured projects, client testimonials, and contact functionality—tailored to attract clients, recruiters, and potential collaborators.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-🎯 Key Features
-🔹 Hero Section with Name, Title, Avatar & Action Buttons
+Currently, two official plugins are available:
 
-🔹 "About Me" Section with Experience and Project Counters
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-🔹 Skills Bar (Tailwind CSS, TypeScript, Angular, React)
+## Expanding the ESLint configuration
 
-🔹 Project Showcase Grid with Tech Stack Tags
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-🔹 Client Testimonials with Name, Role, and Feedback
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-🔹 Contact Section with Form and Social Links
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-🔹 Sticky Navbar with Scroll Navigation
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-🔹 Mobile-Responsive Design
-
-🛠️ Tech Stack
-Category	Technologies
-Frontend	HTML5, Tailwind CSS, JavaScript, TypeScript
-Framework	Angular (for modular development)
-Design System	TailwindCSS
-Icons & UI	Heroicons, FontAwesome, Custom SVGs
-Version Control	Git + GitHub
-Build Tool	Vite (Assumed from localhost:5173)
-
-📂 Folder Structure (Suggested)
-bash
-Copy
-Edit
-portfolio-website/
-├── public/
-│   └── images/           # Profile image, project thumbnails
-├── src/
-│   ├── assets/           # Static assets
-│   ├── components/       # Navbar, Footer, Testimonials, etc.
-│   ├── pages/            # Home, About, Contact, etc.
-│   ├── styles/           # Tailwind config or custom CSS
-│   └── App.tsx           # Main App component
-├── tailwind.config.js
-├── vite.config.ts
-├── index.html
-├── package.json
-└── README.md
-🔧 Installation & Setup
-bash
-Copy
-Edit
-# Clone the repository
-git clone https://github.com/your-username/portfolio-website.git
-
-# Navigate into the project folder
-cd portfolio-website
-
-# Install dependencies
-npm install
-
-# Run the development server
-npm run dev
-Open http://localhost:5173 in your browser.
-
-📸 Screenshots
-You can upload screenshots to GitHub and embed them like:
-
-md
-Copy
-Edit
-![Homepage Screenshot](screenshots/home.png)
-📬 Contact Info
-MUZZAMIL
-Frontend Developer
-📍 Lahore, Pakistan
-🌐 LinkedIn | GitHub | Portfolio
-
-📜 License
-This project is licensed under the MIT License — feel free to use and modify for personal and commercial use.
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
