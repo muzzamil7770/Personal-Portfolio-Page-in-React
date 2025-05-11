@@ -51,8 +51,6 @@ portfolio-website/
 bash
 Copy
 Edit
-# Clone the repository
-git clone https://github.com/your-username/portfolio-website.git
 
 # Navigate into the project folder
 cd portfolio-website
