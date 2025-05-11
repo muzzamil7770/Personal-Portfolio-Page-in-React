@@ -1,6 +1,4 @@
 📁 Project Name: MUZZAMIL – Personal Portfolio Website
-🚀 Live Demo
-A hosted link can be added here, e.g., https://yourdomain.com
 
 📌 Description
 A modern, responsive, and professionally designed portfolio website for a Frontend Web Developer. This project showcases personal branding, technical skills, featured projects, client testimonials, and contact functionality—tailored to attract clients, recruiters, and potential collaborators.
@@ -72,7 +70,7 @@ You can upload screenshots to GitHub and embed them like:
 md
 Copy
 Edit
-![Homepage Screenshot](screenshots/home.png)
+![Homepage Screenshot](screencapture-localhost-5173-services-2025-05-11-21_11_03.png)
 📬 Contact Info
 MUZZAMIL
 Frontend Developer
